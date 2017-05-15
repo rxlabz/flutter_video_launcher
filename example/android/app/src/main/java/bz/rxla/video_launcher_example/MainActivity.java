@@ -1,4 +1,4 @@
-package com.yourcompany.video_launcher_example;
+package bz.rxla.video_launcher_example;
 
 import android.os.Bundle;
 

@@ -44,7 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<Null> _launch(String url) async {
-    //await launchVideo(url);
     if (await canLaunchVideo(url)) {
       await launchVideo(url);
     } else {
