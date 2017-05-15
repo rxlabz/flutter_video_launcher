@@ -11,7 +11,7 @@ void main() {
   runApp(new MyApp());
 }
 
-const videoUrl = 'http://techslides.com/demos/sample-videos/small.mp4';
+const videoUrl = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
 
 class MyApp extends StatelessWidget {
   @override
