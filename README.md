@@ -1,10 +1,10 @@
 # VideoLauncher
 
-Usage
+## Usage
 
-To use this plugin, add path_provider as a dependency in your pubspec.yaml file.
+To use this plugin, add video_launcher as a dependency in your pubspec.yaml file.
 
-Example
+## Example
 
 After importing 'package:video_launcher/video_launcher.dart' the directories can be queried as follows
 
