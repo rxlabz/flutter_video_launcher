@@ -12,7 +12,7 @@ const _channel = const MethodChannel('bz.rxla.flutter/video_launcher');
 /// with false.
 Future<Null> launchVideo(String urlString, {bool isLocal:false}) {
   return _channel.invokeMethod(
-    /* FIXME had trouble too send a false BOOL to objC => for now I send 1 || 0 */
+    /* FIXME had some trouble to send a false BOOL to objC => for now I send 1 || 0 */
     'launchVideo',{"url":urlString, "isLocal":isLocal ? 1 : 0 },
   );
 }
