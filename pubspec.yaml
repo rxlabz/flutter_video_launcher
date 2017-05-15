@@ -1,0 +1,11 @@
+name: video_launcher
+description: A new flutter plugin project.
+
+flutter:
+  plugin:
+    androidPackage: com.yourcompany.video_launcher
+    pluginClass: VideoLauncherPlugin
+
+dependencies:
+  flutter:
+    sdk: flutter
