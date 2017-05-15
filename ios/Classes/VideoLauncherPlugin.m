@@ -15,7 +15,7 @@
         if ([@"canLaunchVideo" isEqualToString:call.method]) {
             result(isLocal ? @([self fileExists:url]) : @([self canLaunchURLVideo:url]));
         } else if ([@"launchVideo" isEqualToString:call.method]) {
-            [self launchURLVideo:url result:result isLocal:isLocal ];
+            [self launchURLVideo:url result:result isLocal:isLocal];
         } else {
             result(FlutterMethodNotImplemented);
         }
@@ -47,7 +47,7 @@
     playerViewController.player = player;
 
     [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:playerViewController.view];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:playerViewController animated:NO completion:nil];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:playerViewController animated:YES completion:nil];
 
     [player play];
 

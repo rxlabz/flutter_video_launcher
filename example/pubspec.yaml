@@ -1,5 +1,7 @@
 name: video_launcher_example
-description: Demonstrates how to use the video_launcher plugin.
+description: Fullscreen video launcher
+version: 0.1.0
+author : Erick Ghaumez <rx.devlabz@gmail.com>
 
 dependencies:
   flutter:
