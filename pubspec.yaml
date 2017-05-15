@@ -1,5 +1,8 @@
 name: video_launcher
-description: A new flutter plugin project.
+description: Fullscreen video launcher plugin
+version: 0.2.0
+author: Erick Ghaumez <rx.devlabz@gmail.com>
+homepage: https://github.com/rxlabz/flutter_video_launcher
 
 flutter:
   plugin:
