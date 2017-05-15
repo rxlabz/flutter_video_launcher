@@ -1,4 +1,4 @@
-group 'com.yourcompany.video_launcher'
+group 'bz.rxla.video_launcher'
 version '1.0-SNAPSHOT'
 
 buildscript {
