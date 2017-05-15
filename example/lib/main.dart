@@ -1,7 +1,3 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -13,15 +9,17 @@ void main() {
 
 const videoUrl = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
 
+/// a video launcher, based on url_launcher
+/// can read remote and local files
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'URL Launcher',
+      title: 'Video Launcher',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'URL Launcher'),
+      home: new MyHomePage(title: 'Video Launcher'),
     );
   }
 }
@@ -39,11 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _launchUrl() {
     setState(() {
-      _launched = _launch(videoUrl);
+      _launched = _launchVideo(videoUrl);
     });
   }
 
-  Future<Null> _launch(String url) async {
+  Future<Null> _launchVideo(String url) async {
     if (await canLaunchVideo(url)) {
       await launchVideo(url);
     } else {
@@ -55,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (snapshot.hasError) {
       return new Text('Error: ${snapshot.error}');
     } else {
-      return const Text('');
+      return const Text('Video launched');
     }
   }
 

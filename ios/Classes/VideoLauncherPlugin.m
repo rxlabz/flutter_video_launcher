@@ -35,9 +35,6 @@
 }
 
 + (void)launchURLVideo:(NSString *)urlString result:(FlutterResult)result isLocal:(BOOL)isLocal {
-
-
-    NSLog(@" url :%@ / isLocal: %@", urlString, isLocal ? @"local" : @"url");
     NSURL *url = isLocal ? [NSURL fileURLWithPath:urlString] : [NSURL URLWithString:urlString];
 
     AVPlayer *player = [AVPlayer playerWithURL:url];
@@ -46,8 +43,9 @@
     playerViewController.showsPlaybackControls = YES;
     playerViewController.player = player;
 
-    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:playerViewController.view];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:playerViewController animated:YES completion:nil];
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [viewController.view addSubview:playerViewController.view];
+    [viewController presentViewController:playerViewController animated:YES completion:nil];
 
     [player play];
 
