@@ -1,20 +1,26 @@
 PODS:
   - Flutter (1.0.0)
+  - path_provider (0.0.1):
+    - Flutter
   - video_launcher (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - Flutter (from `/Users/rxlabz/dev/tools/flutter/bin/cache/artifacts/engine/ios`)
+  - path_provider (from `/Users/rxlabz/.pub-cache/hosted/pub.dartlang.org/path_provider-0.2.0/ios`)
   - video_launcher (from `/Users/rxlabz/dev/projects/fluttrx_plugins/video_launcher/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: /Users/rxlabz/dev/tools/flutter/bin/cache/artifacts/engine/ios
+  path_provider:
+    :path: /Users/rxlabz/.pub-cache/hosted/pub.dartlang.org/path_provider-0.2.0/ios
   video_launcher:
     :path: /Users/rxlabz/dev/projects/fluttrx_plugins/video_launcher/ios
 
 SPEC CHECKSUMS:
   Flutter: d674e78c937094a75ac71dd77e921e840bea3dbf
+  path_provider: 94dab0b7f970c056e351b22a4d64015a1d1e8454
   video_launcher: 2420baaa0ce4ae07ff2ea6661766558bb655389f
 
 PODFILE CHECKSUM: cc70c01bca487bebd110b87397f017f3b76a89f1

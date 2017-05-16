@@ -3,14 +3,12 @@ description: Fullscreen video launcher
 version: 0.2.0
 author : Erick Ghaumez <rx.devlabz@gmail.com>
 
-flutter:
-  plugin:
-    androidPackage: bz.rxla.video_launcher
-    pluginClass: VideoLauncherPlugin
-
 dependencies:
   flutter:
     sdk: flutter
+  video_launcher:
+    path: ../
+  path_provider:
 
 flutter:
   uses-material-design: true
