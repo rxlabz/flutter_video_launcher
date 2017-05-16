@@ -24,8 +24,7 @@
 
 + (BOOL)fileExists:(NSString *)pathString {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *pathForFile;
-    return [fileManager fileExistsAtPath:pathForFile];
+    return [fileManager fileExistsAtPath:pathString];
 }
 
 + (BOOL)canLaunchURLVideo:(NSString *)urlString {
