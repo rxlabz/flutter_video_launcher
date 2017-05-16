@@ -1,12 +1,18 @@
 # VideoLauncher
 
-![screenshot](https://www.github.com/rxlabz/flutter_video_launcher/screenshot.png)
+## Example
+
+```bash
+cd flutter_video_launcher/example
+flutter packages get
+flutter run
+```
+
+![screenshot](https://github.com/rxlabz/flutter_video_launcher/blob/master/screenshot.png)
 
 ## Usage
 
 To use this plugin, add video_launcher as a dependency in your pubspec.yaml file.
-
-## Example
 
 After importing 'package:video_launcher/video_launcher.dart' the directories can be queried as follows
 
@@ -35,6 +41,20 @@ Future<Null> _launch(String url) async {
 ```
 
 Please see the example app of this plugin for a full example.
+
+## :warning: iOS App Transport Security
+
+By default iOS do not allow access to non-https url. You need to allow non-securized domain in your .plist file
+ 
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+
+cf. [Configuring App Transport Security Exceptions in iOS](https://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/)
 
 ## Getting Started
 
