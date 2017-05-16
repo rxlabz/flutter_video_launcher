@@ -1,5 +1,7 @@
 # VideoLauncher
 
+![screenshot](screenshot.png)
+
 ## Usage
 
 To use this plugin, add video_launcher as a dependency in your pubspec.yaml file.
