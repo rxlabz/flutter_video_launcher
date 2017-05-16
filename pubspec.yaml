@@ -10,5 +10,4 @@ flutter:
     pluginClass: VideoLauncherPlugin
 
 dependencies:
-  flutter:
-    sdk: flutter
+  flutter: ">=0.0.20 <0.1.0"

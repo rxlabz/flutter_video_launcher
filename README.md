@@ -1,6 +1,6 @@
 # VideoLauncher
 
-![screenshot](screenshot.png)
+![screenshot](https://www.github.com/rxlabz/flutter_video_launcher/screenshot.png)
 
 ## Usage
 
