@@ -44,7 +44,7 @@ Please see the example app of this plugin for a full example.
 
 ## :warning: iOS App Transport Security
 
-By default iOS do not allow access to non-https url. You need to allow non-securized domain in your .plist file
+By default iOS forbids loading from non-https url. To cancel this restriction edit your .plist and add :
  
 ```xml
 <key>NSAppTransportSecurity</key>
