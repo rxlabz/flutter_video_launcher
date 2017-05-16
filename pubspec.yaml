@@ -1,6 +1,6 @@
 name: video_launcher
 description: Fullscreen video launcher plugin
-version: 0.2.0+1
+version: 0.2.1
 author: Erick Ghaumez <erick@rxla.bz>
 homepage: https://github.com/rxlabz/flutter_video_launcher
 
