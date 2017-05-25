@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/.gradle/3.2/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/.gradle/3.2/taskArtifacts/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/.gradle/3.3/packages" />
@@ -48,6 +49,7 @@
       <excludeFolder url="file://$MODULE_DIR$/example/android/gradle/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/gradle/wrapper/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.idea/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.idea/runConfigurations/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Flutter/App.framework/packages" />
