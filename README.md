@@ -42,11 +42,6 @@ Future<Null> _launch(String url) async {
 
 Please see the example app of this plugin for a full example.
 
-## Troubleshooting
-
-### Android
-
-If you get a MissingPluginException, try to `flutter build apk` on Android, or `flutter build ios`
 
 ## :warning: iOS App Transport Security
 
@@ -61,6 +56,10 @@ By default iOS forbids loading from non-https url. To cancel this restriction ed
 ```
 
 cf. [Configuring App Transport Security Exceptions in iOS](https://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/)
+
+## Troubleshooting
+
+If you get a MissingPluginException, try to `flutter build apk` on Android, or `flutter build ios`
 
 ## Getting Started
 
