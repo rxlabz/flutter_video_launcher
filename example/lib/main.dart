@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:video_launcher/video_launcher.dart';
-import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(new MyApp());
@@ -40,11 +41,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Future<Null> _launched;
   String localVideoPath;
+  String localAssetPath;
 
-  _buildButton(String label, VoidCallback onPressed) => new Padding( padding: new EdgeInsets.all(12.0), child: new RaisedButton(
-     onPressed: onPressed,
-     child: new Text(label),
-   ) );
+  _buildButton(String label, VoidCallback onPressed) => new Padding(
+      padding: new EdgeInsets.all(12.0),
+      child: new RaisedButton(
+        onPressed: onPressed,
+        child: new Text(label),
+      ));
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: new Text(videoUrl),
                 ),
                 /*new Row(mainAxisSize: MainAxisSize.min, children: [*/
-                  _buildButton('Play online', _launch),
-                  _buildButton('Download', localVideoPath != null ? null : _loadVideo),
-                  _buildButton('Play local', localVideoPath != null ? _launchLocal : null),
+                _buildButton('Play online', _launch),
+                _buildButton(
+                    'Download', localVideoPath != null ? null : _loadVideo),
+                _buildButton(
+                    'Play local', localVideoPath != null ? _launchLocal : null),
+                _buildButton('Play video asset', _loadOrLaunchLocalAsset),
                 /*]),*/
               ],
             ),
@@ -77,28 +89,40 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _launch() => setState(() => _launched = _launchVideo(videoUrl));
 
-  void _launch() {
+  void _launchLocal() =>
+      setState(() => _launched = _launchVideo(localVideoPath, isLocal: true));
+
+  void _loadOrLaunchLocalAsset() =>
+      localAssetPath != null ? _launchLocalAsset() : copyLocalAsset();
+
+  Future copyLocalAsset() async {
+    final dir = await getApplicationDocumentsDirectory();
+    final file = new File("${dir.path}/video_asset.mp4");
+    final videoData = await rootBundle.load("assets/video.mp4");
+    final bytes = videoData.buffer.asUint8List();
+    file.writeAsBytes(bytes, flush: true);
     setState(() {
-      _launched = _launchVideo(videoUrl);
+      localAssetPath = file.path;
+      _launchLocalAsset();
     });
   }
-  void _launchLocal() {
-    setState(() {
-      _launched = _launchVideo(localVideoPath, isLocal: true);
-    });
-  }
+
+  void _launchLocalAsset() =>
+      setState(() => _launched = _launchVideo(localAssetPath, isLocal: true));
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
-    String info ;
+    String info;
     if (snapshot.hasError) {
       return new Text('Error: ${snapshot.error}');
     } else {
       info = localVideoPath != null ? localVideoPath : '';
     }
-    return new Padding( padding: new EdgeInsets.only(top: 20.0), child: new Text(info) );
+    return new Padding(
+        padding: new EdgeInsets.only(top: 20.0), child: new Text(info));
   }
-  
+
   Future<Null> _launchVideo(String url, {bool isLocal: false}) async {
     if (await canLaunchVideo(url, isLocal: isLocal)) {
       await launchVideo(url, isLocal: isLocal);
