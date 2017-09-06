@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="bz.rxla.video_launcher"
   android:versionCode="1"
-  android:versionName="0.2.0">
+  android:versionName="0.3.0">
 
   <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="21" />
 </manifest>
