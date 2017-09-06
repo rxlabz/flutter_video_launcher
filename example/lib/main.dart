@@ -73,14 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: new EdgeInsets.all(16.0),
                   child: new Text(videoUrl),
                 ),
-                /*new Row(mainAxisSize: MainAxisSize.min, children: [*/
                 _buildButton('Play online', _launch),
                 _buildButton(
                     'Download', localVideoPath != null ? null : _loadVideo),
                 _buildButton(
                     'Play local', localVideoPath != null ? _launchLocal : null),
                 _buildButton('Play video asset', _loadOrLaunchLocalAsset),
-                /*]),*/
               ],
             ),
             new FutureBuilder<Null>(future: _launched, builder: _launchStatus),

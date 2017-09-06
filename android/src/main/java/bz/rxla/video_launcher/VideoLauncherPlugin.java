@@ -43,10 +43,20 @@ public class VideoLauncherPlugin implements MethodChannel.MethodCallHandler {
     }
 
     private void launchURLVideo(String url, MethodChannel.Result result, Boolean isLocal) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        intent.setDataAndType(Uri.parse(url), "video/mp4");
-        activity.startActivity(intent);
-        result.success(null);
+        if( isLocal ){
+            File f = new File(url);
+            f.setReadable(true, false);
+            Uri videoUri = Uri.fromFile(f);
+            Intent launchIntent = new Intent(Intent.ACTION_VIEW);
+            launchIntent.setDataAndType(Uri.parse(videoUri.toString()), "video/mp4");
+            activity.startActivity(launchIntent);
+            result.success(null);
+        } else {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.setDataAndType(Uri.parse(url), "video/mp4");
+            activity.startActivity(intent);
+            result.success(null);
+        }
     }
 
     private void canLaunchVideo(String url, MethodChannel.Result result, Boolean isLocal) {
