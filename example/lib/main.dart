@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:video_launcher/video_launcher.dart';
 
 void main() {
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final file = new File("${dir.path}/video_asset.mp4");
     final videoData = await rootBundle.load("assets/video.mp4");
     final bytes = videoData.buffer.asUint8List();
-    file.writeAsBytes(bytes, flush: true);
+    await file.writeAsBytes(bytes, flush: true);
     setState(() {
       localAssetPath = file.path;
       _launchLocalAsset();
@@ -110,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _launchLocalAsset() =>
-      setState(() => _launched = _launchVideo(localAssetPath, isLocal: true));
+      _launched = _launchVideo(localAssetPath, isLocal: true);
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
     String info;

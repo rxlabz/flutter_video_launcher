@@ -10,6 +10,7 @@ dependencies:
     path: ../
   path_provider:
 
+
 flutter:
   uses-material-design: true
   assets:
