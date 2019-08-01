@@ -6,10 +6,14 @@ author : Erick Ghaumez <rx.devlabz@gmail.com>
 dependencies:
   flutter:
     sdk: flutter
+  http: ^0.12.0+2
   video_launcher:
     path: ../
-  path_provider:
+  path_provider: ^1.2.0
 
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
