@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+  <!-- Enables flutter asset files to be shared  -->
+  <files-path name="images" path="../app_flutter/"/>
+
+</paths>
